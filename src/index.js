@@ -69,8 +69,7 @@ const element = <h1> Hellow, {getMahasiwa(mahasiwi)}, anda adalah {getStatus(mah
 // const element = <Product judul="Koleksi Avengers menggunakan Class Component" harga="100000 menggunakan
 //             Class Component"/>
 
-const element = <Product judul="Koleksi Avengers menggunakan Class sendiri" harga="100000 menggunakan
-Class Sendiri"/>
+const element = <App/>
     
     ReactDOM.render(element, document.getElementById('root'));
 
