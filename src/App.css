@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 0.01s linear;
+  animation: App-logo-spin infinite 0.9s linear;
   height: 34vmin;
   pointer-events: none;
 }
@@ -35,6 +35,17 @@
   flex-direction: column;
   align-items: left;
   /*iklan buka lapak */
+}
+
+.kons-gambar {
+  animation: App-logo-spin infinite 0.9s linear;
+  height: 34vmin;
+  pointer-events: none;
+}
+
+.sucks {
+  background-image: url('./logo.svg');
+  font-family: Georgia; 
 }
 
 .App-header {
