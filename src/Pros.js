@@ -5,9 +5,12 @@ import './App.css';
 class Product extends Component{
     render(){
     return(
-        <div>
-            <img src={logo} className="App-logo" alt="logo"></img>
-            <h1>{this.props.judul}</h1><h3>Harga : {this.props.harga} </h3> 
+        
+        <div className="col s6 m3">
+            <div className="card-panel blue lighten-2">
+                <img src={logo} className="App-logo" alt="logo"></img>
+                <p class="flow-text"><blockquote>{this.props.judul}</blockquote>Harga : {this.props.harga} </p>
+            </div> 
         </div>
     );
 }

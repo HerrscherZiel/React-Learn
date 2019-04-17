@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Product from "./Pros";
 import Kons from './kons.js';
+// import '.materialize/css/materialize.css';
+// import '.materialize/js/materialize.js';
 
 class App extends Component {
   render() {
@@ -26,11 +28,13 @@ class App extends Component {
             <div className="none"><Kons judul="My Life" subs="Sucks" you="especially you"/> </div>         
           </div>
 
-         <header className="App-header">
-          <div className="kotak"><Product judul="Power Bank" harga="100.000"/></div>
-          <div className="kotak"><Product judul="Power Bank" harga="100.000"/></div>
-          <div className="kotak"><Product judul="Power Bank" harga="100.000"/></div>
-          <div className="kotak"><Product judul="Power Bank" harga="100.000"/></div>
+         <header className="row">
+          
+          <Product judul="Power Bank" harga="100.000"/>
+          <Product judul="Power Bank" harga="100.000"/>
+          <Product judul="Power Bank" harga="100.000"/>
+          <Product judul="Power Bank" harga="100.000"/>
+          
         </header> 
         
       </div>
