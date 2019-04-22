@@ -11,21 +11,43 @@ class App extends Component {
     super();
     this.state = {
 
-      product: []
-    };
+      product: [{ 
+        nama : 'Lorem Ipsum',
+        harga: '10.0000',
+        id: 100
+
+      },
+      {
+        nama : 'Lorem Ipsum',
+        harga: '10.0000',
+        id: 50
+
+      }],
+      
+      delete_clicked : 0
+      
+      };
   }
 
-  componentDidMount() {
-    let api_url = 'https://my-json-server.typicode.com/HerrscherZiel/product_react_api/product';
-    fetch(api_url)
-          .then(response => response.json())
-          .then(data=> {
-            this.setState({product : data});
-          })
-          .catch(function(e) {
-            console.log(e);
-          })
+  // componentDidMount() {
+  //   let api_url = 'https://my-json-server.typicode.com/HerrscherZiel/product_react_api/product';
+  //   fetch(api_url)
+  //         .then(response => response.json())
+  //         .then(data=> {
+  //           this.setState({product : data});
+  //         })
+  //         .catch(function(e) {
+  //           console.log(e);
+  //         })
+  //     }
+
+      hapusCard = (key) => {
+        this.state.delete_clicked = !this.state.delete_clicked;
+        this.setState ({delete_clicked : this.state.delete_clicked});
+        this.state.product.splice(key.target.id,1);
+        this.setState({product : this.state.product});
       }
+
 
       hapusBaris = (key) => {
         this.state.product.splice(key, 1);
@@ -43,6 +65,10 @@ class App extends Component {
         this.setState({product: this.state.product});
 
         this.refs.form.reset();
+
+      }
+
+      componentDidUpdate(prevProps, prevState, snapshot) {
 
       }
 
@@ -68,9 +94,9 @@ class App extends Component {
         <div className="col m12">
 
           <form ref="form" onSubmit={this.handleSubmit}>
-            <input type="text" id="id" placeholder="ID Product"></input>
-            <input type="text" id="nama" placeholder="Nama Product"></input>
-            <input type="text" id="harga" placeholder="Harga"></input>
+            <input type="text" ref="id" placeholder="ID Product"></input>
+            <input type="text" ref="nama" placeholder="Nama Product"></input>
+            <input type="text" ref="harga" placeholder="Harga"></input>
             <button type="submit" className="waves-effect waves-light btn">Submit</button>
           </form>
 
@@ -80,22 +106,25 @@ class App extends Component {
 
             <table>
 
-              <thead>
+              {/* <thead>
                 <tr>
                   <th>Nama Produk</th>
                   <th>Harga</th>
                   <th>Opsi</th>
                 </tr>
-              </thead>
+              </thead> */}
 
               <tbody>
                 {this.state.product.map((data,key)=>{
                   return(
-                    <tr key={data.id}>
-                      <td>{data.nama}</td>
-                      <td>{data.harga}</td>
-                      <td><button onClick={ ()=> this.hapusBaris(key) }className="waves-effect waves-light btn">Delete</button></td>
-                    </tr>                    
+                    // <tr key={data.id}>
+                    //   <td>{data.nama}</td>
+                    //   <td>{data.harga}</td>
+                    //   <td><button onClick={ ()=> this.hapusBaris(key) }className="waves-effect waves-light btn">Delete</button></td>
+                    // </tr>        
+                    
+                    <Product hapusCard={this.hapusCard} harga={data.harga} nama={data.nama} key={key} id={key}/>
+                    // <Product nama = {data.nama} harga = {data.harga}> hapusCard = {this.hapusCard} key = {key} id = {key} </Product>            
                     )
                   })}
               </tbody>

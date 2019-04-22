@@ -15,9 +15,14 @@ class Product extends Component{
                 <div className="center-align">
                 <img src={bawang} className="App-logo" alt="logo"></img>
                 </div>
-
                 <p class="flow-text"><blockquote>{this.props.nama}</blockquote>Harga : {this.props.harga} </p>                
-            </div> 
+                <br></br>
+                <div className="card-action">
+                <button className="waves-effect waves-light btn">
+                <a onClick ={this.props.hapusCard} id ={this.props.id} href="#">Delete</a>
+                </button>
+                </div>
+                </div> 
         </div>
     );
 }
