@@ -4,6 +4,18 @@ import Product from "./Pros";
 import Kons from './kons.js';
 import Buttons from './ButtonFloats';
 import './materialize/css/materialize.min.css';
+import { compose, withProps } from "recompose"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+// import'./maps.js';
+
+const MyMapComponent = withScriptjs(withGoogleMap((props) =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  >
+    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+  </GoogleMap>
+))
 
 class App extends Component {
 
@@ -71,9 +83,11 @@ class App extends Component {
       componentDidUpdate(prevProps, prevState, snapshot) {
 
       }
-
+      
   render() {
+
     return (
+      
       <div className="App">
           
           <header className="row">
@@ -82,16 +96,12 @@ class App extends Component {
           
           
           </header>
+      
 
-          {/* <header className="row">
-          <div className="sucks">
-            <Kons judul="My Life" subs="Sucks" you="you all"/>
-            <Kons judul="My Life" subs="Sucks" you="yes you"/>
-            <Kons judul="My Life" subs="Sucks" you="especially you"/>       
-          </div>
-          </header> */}
+          <header className="row">
+      <div className="col s12">
 
-        <div className="col m12">
+        <div className="col s6">
 
           <form ref="form" onSubmit={this.handleSubmit}>
             <input type="text" ref="id" placeholder="ID Product"></input>
@@ -101,6 +111,20 @@ class App extends Component {
           </form>
 
         </div>
+
+        <div className="col s6">
+          <MyMapComponent
+            isMarkerShown
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWQLKlQCRRKJ2peEbGoxzPMzruN8EiReo&v=3.exp&libraries=geometry,drawing,places"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `400px` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+          />
+        </div>
+
+      </div>
+
+      </header>
 
          <header className="row">
 

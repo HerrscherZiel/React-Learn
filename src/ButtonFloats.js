@@ -8,7 +8,7 @@ class Buttons extends Component{
     render(){
     return(
         
-        <div className="col s12 m10">
+        <div className="col s12 m12">
             <div className="card-panel grey">
                 <div className="row valign-wrapper">
 
