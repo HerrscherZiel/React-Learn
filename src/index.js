@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import App2 from './App2';
 import * as serviceWorker from './serviceWorker';
 
 //const element = <h1>Hello World!!</h1>
@@ -68,7 +69,7 @@ const element = <h1> Hellow, {getMahasiwa(mahasiwi)}, anda adalah {getStatus(mah
 // const element = <Product judul="Koleksi Avengers menggunakan Class Component" harga="100000 menggunakan
 //             Class Component"/>
 
-const element = <App/>
+const element = <App2/>
     
     ReactDOM.render(element, document.getElementById('root'));
 

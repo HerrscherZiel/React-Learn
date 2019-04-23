@@ -12,8 +12,8 @@ class Product extends Component{
         <div className="col s3">
             <div className="card-panel blue lighten-2">
 
-                <div className="center-align">
-                <img src={bawang} className="App-logo" alt="logo"></img>
+                <div className="circle responsive-img">
+                <img src={bawang} class="circle responsive-img" alt="logo"></img>
                 </div>
                 <p class="flow-text"><blockquote>{this.props.nama}</blockquote>Harga : {this.props.harga} </p>                
                 <br></br>

@@ -31,10 +31,24 @@ class App extends Component {
       },
       {
         nama : 'Lorem Ipsum',
-        harga: '10.0000',
+        harga: '20.0000',
         id: 50
 
-      }],
+      },
+      {
+        nama : 'Lorem Ipsum',
+        harga: '30.0000',
+        id: 25
+
+      },
+      {
+        nama : 'Lorem Ipsum',
+        harga: '60.0000',
+        id: 5
+
+      }
+    
+    ],
       
       delete_clicked : 0
       
