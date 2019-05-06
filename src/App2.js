@@ -18,7 +18,7 @@ class App2 extends Component {
     render() {
         return(
             <div>
-                <Navbar/>
+               <Navbar/>
                 <br/>
                 <Button variant="contained" color="secondary">Apple of My Nuts</Button>
                 {/* {this.state.telss.map((data,key))} */}
